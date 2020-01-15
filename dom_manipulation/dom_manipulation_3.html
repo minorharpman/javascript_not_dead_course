@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Javascript videó 3: Dom manipuláció (jQuery nélkül) és Események típusai</title>
+</head>
+<body>
+
+<style>
+
+
+</style>
+
+	Videó linkje: <a href="" target="_blank">SZERKESZTÉS ALATT</a>
+
+<h1>Javascript videó 3: Dom manipuláció (jQuery nélkül) és Események típusai</h1>
+
+<p id="elso">Test szöveg</p>
+<p id="masodik" >Test 2 szöveg</p>
+<p id="harmadik">Test 3 szöveg</p>
+
+
+<a href="#" id="gomb"> Eltünteti a Test szöveget</a>
+
+<br><br><br>
+
+<a href="#" id="gomb2"> Megjeleníti az altüntetett a Test szöveget</a>
+
+
+
+<script>
+
+// első elemet kiválasztja 
+let elem = document.querySelector('#elso');
+// 2. elemet kiválasztja
+let elem2 = document.querySelector('#masodik');
+
+//elem2.style.display = 'none';
+
+
+//összes <p> elem 
+let elemek = document.querySelectorAll("p");
+
+//forEach:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
+//addEventListener:  https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+
+let gombElem = document.querySelector("#gomb");
+
+//esemény hozzákötése a gomb elemhez
+gombElem.addEventListener("click", (event) => {
+
+console.log("esemény típusa: "+event.type);
+
+elemek.forEach(elem => { elem.style.display = "none" });
+
+/*
+elemek.forEach(
+	function(elem){
+	    elem.style.display = "none";
+	}
+);
+*/
+
+ });
+
+//https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event
+
+gombElem.addEventListener("mouseover", (event) => {
+
+console.log("esemény típusa: "+ event.type);
+
+  event.target.style.color = "green";
+
+  elem.style.color = "orange";
+
+ });
+
+gombElem.addEventListener("mousedown", (event) => {
+
+console.log("esemény típusa: "+ event.type);
+
+  event.target.style.color = "red";
+
+  elem2.style.color = "blue";
+
+ });
+
+
+
+let gombElem2 = document.querySelector("#gomb2");
+
+//esemény hozzákötése a gomb elemhez
+gombElem2.addEventListener("click", (event) => {
+
+console.log("esemény típusa: "+event.type);
+
+elemek.forEach(elem => { elem.style.display = "block" });
+
+
+ });
+
+
+
+
+</script>
+
+</body>
+</html>
