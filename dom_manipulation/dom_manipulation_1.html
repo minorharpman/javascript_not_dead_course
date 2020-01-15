@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dom manipuláció</title>
+</head>
+<body>
+
+<h1>Dom manipuláció</h1>
+
+<p>Test szöveg</p>
+<p>Test szöveg</p>
+<p>Test szöveg</p>
+
+
+<script>
+
+// elsõ elemet kiválasztja 
+// https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+let el = document.querySelector('p');
+
+// hide
+el.style.display = 'none';
+
+// show
+//el.style.display = '';
+el.style.display = 'block';
+
+
+//let elemek = document.querySelectorAll("p");
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
+/*
+elemek.forEach(
+function(elem){
+elem.style.display = "none";
+}
+);
+*/
+
+//elemek.forEach(elem => { elem.style.display = "none" });
+
+</script>
+
+</body>
+</html>
