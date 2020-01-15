@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dom manipuláció 2 (jQuery nélkül) és Esemény kezelés </title>
+</head>
+<body>
+
+<style>
+
+.piros{
+	color:red;
+}
+</style>
+
+	Videó linkje: <a href="https://www.youtube.com/watch?v=x84-XR6kKQ8" target="_blank">https://www.youtube.com/watch?v=x84-XR6kKQ8</a>
+
+<h1>Dom manipuláció 2 (jQuery nélkül) és Esemény kezelés</h1>
+
+<p class= "piros">Test szöveg</p>
+<p class= "piros" >Test 2 szöveg</p>
+<p id="harmadik">Test 3 szöveg</p>
+
+
+<a href="#" id="gomb"> Eltünteti a Test szöveget</a>
+
+
+
+<script>
+
+// első elemet kiválasztja 
+// https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+let el = document.querySelector('.piros');
+
+// hide
+//el.style.display = 'none';
+
+// show
+//el.style.display = '';
+//el.style.display = 'block';
+
+
+let elem2 = document.querySelector('#harmadik');
+
+//elem2.style.display = 'none';
+
+
+//összes <p> elem 
+let elemek = document.querySelectorAll("p");
+
+//forEach:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
+
+//addEventListener:  https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+
+
+let gombElem = document.querySelector("#gomb");
+
+//esemény hozzákötése a gomb elemhez
+gombElem.addEventListener("click", (e) => {
+
+elemek.forEach(elem => { elem.style.display = "none" });
+
+/*
+elemek.forEach(
+	function(elem){
+	    elem.style.display = "none";
+	}
+);
+*/
+
+ });
+
+</script>
+
+</body>
+</html>
