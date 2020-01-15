@@ -24,7 +24,7 @@
 
 <br><br><br>
 
-<a href="#" id="gomb2"> Megjeleníti az altüntetett a Test szöveget</a>
+<button id="gomb2" type="button" > Megjeleníti az altüntetett a Test szöveget</button>
 
 
 
@@ -52,6 +52,9 @@ let gombElem = document.querySelector("#gomb");
 gombElem.addEventListener("click", (event) => {
 
 console.log("esemény típusa: "+event.type);
+console.log("esemény eleme: "+event.target.tagName);
+console.log("esemény elem ID-je: "+event.target.id);
+console.log("----------------------------------------");
 
 elemek.forEach(elem => { elem.style.display = "none" });
 
@@ -69,7 +72,10 @@ elemek.forEach(
 
 gombElem.addEventListener("mouseover", (event) => {
 
-console.log("esemény típusa: "+ event.type);
+console.log("esemény típusa: "+event.type);
+console.log("esemény eleme: "+event.target.tagName);
+console.log("esemény elem ID-je: "+event.target.id);
+console.log("----------------------------------------");
 
   event.target.style.color = "green";
 
@@ -79,7 +85,10 @@ console.log("esemény típusa: "+ event.type);
 
 gombElem.addEventListener("mousedown", (event) => {
 
-console.log("esemény típusa: "+ event.type);
+console.log("esemény típusa: "+event.type);
+console.log("esemény eleme: "+event.target.tagName);
+console.log("esemény elem ID-je: "+event.target.id);
+console.log("----------------------------------------");
 
   event.target.style.color = "red";
 
@@ -95,9 +104,11 @@ let gombElem2 = document.querySelector("#gomb2");
 gombElem2.addEventListener("click", (event) => {
 
 console.log("esemény típusa: "+event.type);
+console.log("esemény eleme: "+event.target.tagName);
+console.log("esemény elem ID-je: "+event.target.id);
+console.log("----------------------------------------");
 
 elemek.forEach(elem => { elem.style.display = "block" });
-
 
  });
 
