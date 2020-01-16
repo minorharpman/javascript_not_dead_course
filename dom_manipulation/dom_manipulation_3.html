@@ -15,17 +15,19 @@
 
 <h1>Javascript videó 3: Dom manipuláció (jQuery nélkül) és Események típusai</h1>
 
-<p id="elso">Test szöveg</p>
-<p id="masodik" >Test 2 szöveg</p>
-<p id="harmadik">Test 3 szöveg</p>
+
 
 
 <a href="#" id="gomb"> Eltünteti a Test szöveget</a>
 
 <br><br><br>
 
-<button id="gomb2" type="button" > Megjeleníti az altüntetett a Test szöveget</button>
+<button id="gomb2" type="button" > Megjeleníti az eltüntetett a Test szöveget</button>
 
+
+<p id="elso">Test szöveg</p>
+<p id="masodik" >Test 2 szöveg</p>
+<p id="harmadik">Test 3 szöveg</p>
 
 
 <script>
@@ -98,6 +100,7 @@ console.log("----------------------------------------");
 
 
 
+let status = 0;
 let gombElem2 = document.querySelector("#gomb2");
 
 //esemény hozzákötése a gomb elemhez
@@ -108,7 +111,16 @@ console.log("esemény eleme: "+event.target.tagName);
 console.log("esemény elem ID-je: "+event.target.id);
 console.log("----------------------------------------");
 
+
+if( status == 0){
 elemek.forEach(elem => { elem.style.display = "block" });
+status = 1;
+
+}else{
+elemek.forEach(elem => { elem.style.display = "none" });
+status = 0;
+}
+
 
  });
 
